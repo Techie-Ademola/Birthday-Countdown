@@ -1,0 +1,503 @@
+@font-face{
+    font-display:swap;
+    font-family:timerFont;
+    src:url('./CursedTimerUlil-Aznm.ttf')
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+.landing-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding-top: 50px;
+}
+
+.landing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    z-index: 999;
+}
+
+.landing h1 {
+    position: relative;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 30px 0 50px;
+    z-index: 99999999;
+    color: #17a2b8;
+}
+
+.landing h1 span {
+    color: #be3b4c;
+    text-transform: capitalize;
+}
+
+.landing p {
+    font-size: 35px;
+    font-family: 'Sofia';
+    line-height: 0;
+    text-shadow: 0 0 10px #ffc107, 
+                0 0 30px #e91e63, 
+                0 0 50px #6dff73, 
+                100px 70px #ffc107, 
+                150px -70px #e91e63, 
+                -100px 70px #03a9f4, 
+                -150px -70px #6dff73;
+    padding: 100px 0;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.countdown b {
+    position: relative;
+    z-index: 999;
+    font-family: timerFont;
+    font-size: 45px;
+    font-weight: lighter !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown b span {
+    position: absolute;
+    font-family: 'Sofia';
+    font-size: 18px;
+    display: block;
+    line-height: 0;
+    margin-top: 60px;
+}   
+
+.countdown h2 {
+    color: #6dff73;
+} 
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #131313;
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110px;
+    height: 250vh;
+    background: #fff;
+    box-shadow: inset -10px 0 40px rgba(0, 0, 0, 1), 
+                inset 10px 0 40px rgba(0, 0, 0, 1), 
+                inset -10px 0 10px rgba(255, 255, 255, 0.25),
+                inset 10px 0 10px rgba(255, 255, 255, 0.25),
+                0 0 50px rgba(0, 0, 0, 1);
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 35px -35px;
+    }
+}
+
+@keyframes animate_two {
+    0% {
+        background-position: 35px -35px;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.layer.layer1 {
+    background: #222 radial-gradient(#6dff73 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: 11;
+    animation: animate 2s linear infinite;
+}
+
+.layer.layer2 {
+    background: #222 radial-gradient(#db0aff 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    transform: translate(-50%, -38%) rotate(45deg);
+    z-index: 3;
+    animation: animate_two 2s linear infinite;
+}
+
+.layer.layer3 {
+    background: #222 radial-gradient(#03a9f4 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    transform: translate(-50%, -62%) rotate(45deg);
+    z-index: 3;
+    animation: animate 2s linear infinite;
+}
+
+.layer.layer4 {
+    background: #222 radial-gradient(#ffc107 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    z-index: 12;
+    animation: animate_two 2s linear infinite;
+}
+
+.layer.layer5 {
+    background: #222 radial-gradient(#e91e63 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    transform: translate(-50%, -38%) rotate(-45deg);
+    z-index: 10;
+    animation: animate 2s linear infinite;
+}
+
+.layer.layer6 {
+    background: #222 radial-gradient(#0f0 9px, #000 9px, #000 13px, transparent 13px);
+    background-size: 35px 35px;
+    transform: translate(-50%, -62%) rotate(-45deg);
+    z-index: 10;
+    animation: animate 2s linear infinite;
+}
+
+.container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0005);
+}
+
+.container .loader {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    animation: animate_txt 2s linear infinite;
+}
+
+.container .loader:nth-child(2),
+.container .loader:nth-child(4) {
+    animation-delay: -1s;
+    filter: hue-rotate(290deg);
+}
+
+@keyframes animate_txt {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.container .loader:nth-child(1)::before,
+.container .loader:nth-child(3)::before,
+.container .loader:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top, transparent, transparent, rgba(0,255,249,0.4), rgba(0,255,249,0.4));
+    background-size: 100px 180px;
+    background-repeat: no-repeat;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+.container .loader i {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #00fff9;
+    border-radius: 50%;
+    z-index: 100;
+    box-shadow: 0 0 10px #00fff9,
+                0 0 20px #00fff9,
+                0 0 30px #00fff9,
+                0 0 40px #00fff9,
+                0 0 50px #00fff9,
+                0 0 60px #00fff9,
+                0 0 70px #00fff9,
+                0 0 80px #00fff9,
+                0 0 90px #00fff9,
+                0 0 100px #00fff9;
+}
+
+.container .loader span {
+    position: absolute;
+    inset: 7px;
+    background: radial-gradient(circle at center, #e91e63 5%, #000 60%);
+    border-radius: 50%;
+    z-index: 1;
+}
+.slider .box {
+    transition: .5s;
+}
+.slider .box:hover {
+    transform: translateX(10px);
+}
+
+.slider .box {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.slider .box::before {
+    content: '';
+    position: absolute;
+    inset: -50px 60px;
+    background: linear-gradient(315deg, #00ccff, #d400d4);
+    transition: 0.5s;
+    animation: rotateMe 10s linear infinite;
+    animation-play-state: running;
+}
+
+.slider .box:hover::before {
+    inset: -20px -20px;
+    animation-play-state: paused;
+}
+@keyframes rotateMe {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.slider .box::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 50%;
+    background: transparent;
+    z-index: 1;
+    border: 5px dashed #070a1c;
+    animation: rotateMe_two 20s linear infinite;
+    animation-play-state: running;
+}
+@keyframes rotateMe_two {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    position: absolute;
+    inset: 5px;
+    border: 5px dashed transparent;
+    z-index: 3;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content img:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.slider .box:hover .content img:nth-of-type(1) {
+    opacity: 0;
+}
+
+.content img:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+}
+
+.slider .box:hover .content img:nth-of-type(2) {
+    opacity: 1;
+}
+
+.content h2 {
+    position: relative;
+    font-size: 1.1em;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    font-family: 'Sofia';
+    color: #162052;
+}
+
+.content h2 span {
+    font-weight: 900;
+    font-size: 1.5em;
+    line-height: 1;
+    color: #be3b4c;
+}
+
+.slider .box:hover .content h2, .slider .box:hover .content a {
+    z-index: 999;
+}
+
+.content a {
+    position: relative;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #fff;
+    color: #070a1c;
+    border-radius: 25px;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 2;
+    border: none;
+    transition: .2s;
+}
+
+.content a:hover {
+    letter-spacing: 0.15em;
+    color: #fff;
+    font-weight: 600;
+}
+
+.content a span {
+    position: relative;
+    z-index: 3;
+}
+
+.content a::before {
+    content: '';
+    bottom: -6.8em;
+    right: -12.5em;
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #00ccff, #d400d4);
+    transition: 0.5s;
+    border: none;
+}
+
+.content a:hover::before {
+    transform: rotate(35deg) translateX(-50px);
+}
+
+/* Media Responsive Styles */
+
+@media (max-width: 650px) {
+    .landing-inner {
+        padding-top: 50px;
+    }
+
+    .landing h1 {
+        font-size: 30px;
+        margin: 0 0 50px 0;
+    }
+
+    .countdown {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .wrap {
+        gap: 20px;
+    }
+
+    .container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .landing p {
+        font-size: 20px;
+        text-shadow: 100px 40px #ffc107, 
+                    100px -40px #e91e63, 
+                    -100px 40px #6dff73, 
+                    -100px -40px #6dff73;
+        padding: 70px 0;
+    }
+
+    .slider .box {
+        width: 120px;
+        height: 120px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .slider .box::before {
+        content: '';
+        position: absolute;
+        inset: -50px 40px;
+    }
+
+    .content {
+        inset: 3px;
+    }
+}
