@@ -280,7 +280,7 @@ main {
     transition: .5s;
 }
 .slider .box:hover {
-    transform: translateX(10px);
+    transform: scale(1.1);
 }
 
 .slider .box {
